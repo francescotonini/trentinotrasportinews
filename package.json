@@ -7,7 +7,7 @@
     "start": "cross-env NODE_ENV=production node index.js",
     "dev": "cross-env NODE_ENV=development node --inspect index.js",
     "test": "mocha",
-    "coverage": "istanbul cover -x \"errors/*.js\" -x \"test/*.js\" ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "coverage": "istanbul cover -x \"test/*.js\" ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "lint": "eslint ."
   },
   "repository": {
@@ -27,5 +27,12 @@
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
     "should": "^11.1.2"
+  },
+  "dependencies": {
+    "async": "^2.1.4",
+    "handlebars": "^4.0.6",
+    "request": "^2.79.0",
+    "twitter": "^1.7.0",
+    "winston": "^2.3.0"
   }
 }
