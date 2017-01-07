@@ -1,0 +1,19 @@
+box: node:6
+
+# Build
+build:
+  steps:
+  - npm-install
+  - script:
+    name: Node.js information
+    code: |
+      echo "node version $(node -v) running"
+      echo "npm version $(npm -v) running"
+  - script:
+    name: lint
+    code: |
+      npm run lint
+  - script:
+    name: Tests + coverall submit
+    code: |
+      npm run coverage

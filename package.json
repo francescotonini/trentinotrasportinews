@@ -1,0 +1,31 @@
+{
+  "name": "trentinotrasportinews",
+  "version": "1.0.0",
+  "description": "trentinotrasportinews",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development node --inspect index.js",
+    "test": "mocha",
+    "coverage": "istanbul cover -x \"errors/*.js\" -x \"test/*.js\" ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francescotonini/trentinotrasportinews.git"
+  },
+  "author": "Francesco Tonini <francescoantoniotonini@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francescotonini/trentinotrasportinews/issues"
+  },
+  "homepage": "https://github.com/francescotonini/trentinotrasportinews#readme",
+  "devDependencies": {
+    "coveralls": "^2.11.15",
+    "cross-env": "^3.1.4",
+    "eslint": "^3.13.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "should": "^11.1.2"
+  }
+}
