@@ -10,7 +10,9 @@ describe('Twitter test', () => {
 		};
 
 		twitter.onData(sample, (err, result) => {
-			if (err) throw err;
+			if (err) {
+				throw err;
+			}
 
 			result.should.have.property('text').which.is.not.null();
 
@@ -25,7 +27,9 @@ describe('Twitter test', () => {
 		};
 
 		twitter.onData(sample, (err, result) => {
-			if (err) throw err;
+			if (err) {
+				throw err;
+			}
 
 			result.should.have.property('text').which.is.null();
 
