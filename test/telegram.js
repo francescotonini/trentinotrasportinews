@@ -9,7 +9,10 @@ describe('Telegram test', () => {
 		};
 
 		telegram.send(sample, (err, result) => {
-			if (err) throw err;
+			/* istanbul ignore if  */
+			if (err) {
+				throw err;
+			}
 
 			done();
 		});
