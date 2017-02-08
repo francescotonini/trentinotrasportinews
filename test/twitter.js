@@ -3,41 +3,31 @@ const twitter     = require('./../lib/twitter.js');
 
 describe('Twitter test', () => {
 
-	it('Should get object with photo field', (done) => {
+	it('Should get object with text field', (done) => {
 		let sample = {
 			id: 'id',
-			text: 'text',
-			entities: {
-				media: [
-					'url'
-				]
-			}
+			text: '#infobus'
 		};
 
 		twitter.onData(sample, (err, result) => {
 			if (err) throw err;
 
 			result.should.have.property('text').which.is.not.null();
-			result.should.have.property('photo').which.is.not.null();
-			result.should.have.property('url').which.is.not.null();
 
 			done();
 		});
 	});
 
-	it('Should get object without photo field', (done) => {
+	it('Should get object without text field', (done) => {
 		let sample = {
 			id: 'id',
-			text: 'text',
-			entities: { }
+			text: 'text'
 		};
 
 		twitter.onData(sample, (err, result) => {
 			if (err) throw err;
 
-			result.should.have.property('text').which.is.not.null();
-			result.should.have.property('photo').which.is.null();
-			result.should.have.property('url').which.is.not.null();
+			result.should.have.property('text').which.is.null();
 
 			done();
 		});
