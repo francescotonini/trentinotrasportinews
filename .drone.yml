@@ -6,7 +6,7 @@ pipeline:
       - npm run lint
   build:
     image: plugins/docker
-    repo: francescotonini/meteotrentinonews
+    repo: francescotonini/trentinotrasportinews
     tags: ${DRONE_COMMIT_SHA}
     secrets: [ docker_username, docker_password ]
     when:
