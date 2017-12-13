@@ -1,14 +1,8 @@
-FROM node:6.9.2-alpine
+FROM node:8.9.3-alpine
+MAINTAINER Francesco Tonini <francescoantoniotonini@gmail.com>
+ENV REFRESHED_AT 2017-12-13
 
-# Install app dependencies
-COPY package.json /src/package.json
-RUN cd /src; npm install
-
-# Copy app bundle
 COPY . /src
+RUN cd /src && npm install --production
 
-# Set env
-ENV NODE_ENV=production
-
-# Here we go
 CMD ["node", "/src/index.js"]
